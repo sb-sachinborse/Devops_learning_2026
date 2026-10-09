@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting-demo
+  namespace: voting-demo
+  labels:
+    app: voting-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voting-demo
+  template:
+    metadata:
+      labels:
+        app: voting-demo
+    spec:
+      containers:
+        - name: web
+          image: nginx:stable
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi

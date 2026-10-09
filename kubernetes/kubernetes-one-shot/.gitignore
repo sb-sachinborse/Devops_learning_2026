@@ -1,0 +1,9 @@
+# Local credentials and cluster configuration
+.kube/
+.kubeconfig
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+aws-credentials*
